@@ -18,8 +18,8 @@ $ npm start
 
 ## Running Unit Tests
 
-the configuration is found at karma.conf.js
-the unit tests are found in /test.
+The configuration is found at karma.conf.js.<br />
+The unit tests are found in /test.<br />
 The easiest way to run the unit tests is to use the supplied npm script:
 
 ```bash
