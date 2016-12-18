@@ -4,14 +4,8 @@
         <div class="nav-wrapper">
             <a href="#" class="brand-logo left">Logo</a>
             <ul class="right">
-                <li class={ active: isActive('/') }>
-                    <a href="#">Home</a>
-                </li>
-                <li class={ active: isActive('/todo-list') }>
-                    <a href="#todo-list">Todo List</a>
-                </li>
-                <li class={ active: isActive('/http') }>
-                    <a href="#http">Http</a>
+                <li each={ route in routes } class={ active: isActive(route.path) }>
+                    <a href={ route.path.replace('/', '#') }>{ route.label }</a>
                 </li>
             </ul>
         </div>

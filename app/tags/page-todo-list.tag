@@ -20,13 +20,13 @@
                 </ul>
 
                 <div class="row white-text" style="margin: 0;">
-                    <div class="col s3">{ list.length } item{list.length > 1 ? 's': ''} left</div>
+                    <div class="col s3">{ getList('active').length } item{ getList('active').length > 1 ? 's': ''} left</div>
+
                     <div class="col s8 offset-s1">
                         <a href="#todo-list/all" class="btn-flat { active: filter == 'all' } white-text">All</a>
                         <a href="#todo-list/active" class="btn-flat { active: filter == 'active' } white-text">Active</a>
                         <a href="#todo-list/completed" class="btn-flat  { active: filter == 'completed' } white-text">Completed</a>
                     </div>
-
                 </div>
 
             </div>
@@ -51,8 +51,8 @@
             route.exec()
         })
 
-        getList(){
-            switch (this.filter) {
+        getList(type){
+            switch (type || this.filter) {
                 case 'active':
                     return this.list.filter(o=>!o.completed)
                     break;

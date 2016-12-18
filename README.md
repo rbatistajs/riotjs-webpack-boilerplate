@@ -1,4 +1,4 @@
-## Run locally
+## Running the Application
 
 Download or clone this repo.
 
@@ -15,3 +15,13 @@ $ npm start
 
 - Open [http://localhost:3000/](http://localhost:3000/)
 - Open [http://localhost:3000/webpack-dev-server/](http://localhost:3000/webpack-dev-server/) for dev server with hot reloading.
+
+## Running Unit Tests
+
+the configuration is found at karma.conf.js
+the unit tests are found in /test.
+The easiest way to run the unit tests is to use the supplied npm script:
+
+```bash
+$ npm test
+```

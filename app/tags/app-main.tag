@@ -1,7 +1,7 @@
 <app-main>
 
     <!-- layout -->
-    <h1> { title } </h1>
+    <h1 style="text-align: center;"> { title } </h1>
     <div id="container"></div>
 
     <!-- script -->
@@ -28,7 +28,6 @@
                 { name: tagname, instance: tagInst }
             )
 
-            this.update()
             currentTagName = tagname
         }
 
@@ -37,7 +36,11 @@
 
             routes.forEach((r) => {
                 console.log('create route', r.path)
-                route(r.path, () => mountTag(r.tagname))
+                route(r.rule || r.path, () => {
+                    this.title = r.title
+                    mountTag(r.tagname)
+                    this.update()
+                })
             })
 
             route.start(true)
