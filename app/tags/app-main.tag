@@ -2,12 +2,18 @@
 
     <!-- layout -->
     <h1 style="text-align: center;"> { title } </h1>
-    <div id="container"></div>
+    <div id="container" my-attr={ callback }></div>
+
+    <div my-attr={ callback }></div>
 
     <!-- script -->
     <script>
         import route from 'riot-route'
         import routes from '~/services/routes'
+
+        this.callback = () => {
+            console.log("callback");
+        }
 
         let currentTagName
 
